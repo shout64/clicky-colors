@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk1exy45k2eyb"]
+
+[ext_resource type="Texture2D" uid="uid://beug13427ctr8" path="res://assets/button_blue.png" id="1_ygaih"]
+[ext_resource type="Script" uid="uid://cypuxhj3t78jt" path="res://scripts/button.gd" id="2_ve5ma"]
+
+[node name="ButtonBlue" type="Button"]
+offset_right = 40.0
+offset_bottom = 40.0
+icon = ExtResource("1_ygaih")
+script = ExtResource("2_ve5ma")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

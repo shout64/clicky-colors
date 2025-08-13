@@ -1,13 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://8bj8lc8mfvp4"]
 
 [ext_resource type="Texture2D" uid="uid://bj60xin2aqy4" path="res://assets/button_red.png" id="1_b2o25"]
-[ext_resource type="Script" uid="uid://cypuxhj3t78jt" path="res://scripts/red_button.gd" id="2_u1f4r"]
+[ext_resource type="Script" uid="uid://cypuxhj3t78jt" path="res://scripts/button.gd" id="2_u1f4r"]
 
-[node name="RedButton" type="Button"]
-offset_left = 56.0
-offset_top = 21.0
-offset_right = 96.0
-offset_bottom = 61.0
+[node name="ButtonRed" type="Button"]
+offset_right = 40.0
+offset_bottom = 40.0
 icon = ExtResource("1_b2o25")
 script = ExtResource("2_u1f4r")
 
