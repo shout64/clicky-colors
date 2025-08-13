@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5m7yin66v1w7"]
+
+[ext_resource type="Script" uid="uid://dyqp0is4xihmc" path="res://scripts/current_score.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://8bj8lc8mfvp4" path="res://scenes/red_button.tscn" id="2_0wfyh"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CurrentScore" type="RichTextLabel" parent="."]
+offset_left = 372.0
+offset_top = 12.0
+offset_right = 778.0
+offset_bottom = 67.0
+text = "CURRENT SCORE DEFAULT TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_o5qli")
+
+[node name="RedButton" parent="." instance=ExtResource("2_0wfyh")]
+offset_left = 203.0
+offset_top = 238.0
+offset_right = 243.0
+offset_bottom = 278.0
