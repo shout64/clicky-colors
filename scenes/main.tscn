@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5m7yin66v1w7"]
+[gd_scene load_steps=8 format=3 uid="uid://b5m7yin66v1w7"]
 
 [ext_resource type="Script" uid="uid://dyqp0is4xihmc" path="res://scripts/current_score.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bgw5lckf3hk" path="res://scripts/main.gd" id="1_tbgi4"]
@@ -6,23 +6,69 @@
 [ext_resource type="PackedScene" uid="uid://ds28mb05vpxee" path="res://scenes/button_green.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dk1exy45k2eyb" path="res://scenes/button_blue.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://d0rn06kv8oa6m" path="res://scenes/button_enemy.tscn" id="5_tefeu"]
+[ext_resource type="Script" uid="uid://brnlxvf5v63i6" path="res://scripts/hearts_container.gd" id="7_tipki"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_tbgi4")
 buttons = Array[PackedScene]([ExtResource("4_tbgi4"), ExtResource("3_jyhfs"), ExtResource("2_0wfyh"), ExtResource("5_tefeu")])
-
-[node name="CurrentScore" type="RichTextLabel" parent="."]
-offset_left = 372.0
-offset_top = 12.0
-offset_right = 778.0
-offset_bottom = 67.0
-text = "CURRENT SCORE DEFAULT TEXT"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("1_o5qli")
 
 [node name="ButtonSpawningTimer" type="Timer" parent="."]
 wait_time = 2.5
 autostart = true
 
+[node name="MainContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI" type="Control" parent="MainContainer"]
+layout_mode = 1
+anchor_top = 0.028
+anchor_right = 1.0
+anchor_bottom = 0.235
+offset_top = -0.144001
+offset_bottom = -0.280014
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CurrentScore" type="RichTextLabel" parent="MainContainer/UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.3
+anchor_right = 0.6
+anchor_bottom = 0.7
+offset_left = -7.48801
+offset_top = 0.0240002
+offset_right = -2.38403
+offset_bottom = -0.0500031
+text = "CURRENT SCORE
+DEFAULT TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_o5qli")
+
+[node name="HeartsContainer" type="HBoxContainer" parent="MainContainer/UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.164
+anchor_right = 0.951
+anchor_bottom = 0.776
+offset_top = 0.0240002
+offset_right = 8.448
+offset_bottom = 0.0159988
+grow_horizontal = 0
+script = ExtResource("7_tipki")
+
 [connection signal="timeout" from="ButtonSpawningTimer" to="." method="_on_button_spawning_timer_timeout"]
+[connection signal="on_failure" from="MainContainer/UI/HeartsContainer" to="." method="_on_hearts_container_on_failure"]

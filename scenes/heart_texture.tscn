@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://da857py1eukks"]
+
+[ext_resource type="Texture2D" uid="uid://xv70vtroceq7" path="res://assets/minecraft-love-heart.png" id="1_3ir5p"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 900.0
+offset_bottom = 512.0
+texture = ExtResource("1_3ir5p")
