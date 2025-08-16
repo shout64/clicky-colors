@@ -3,8 +3,9 @@ extends Node2D
 @export var buttons        : Array[PackedScene]
 @export var screen_padding : float = 0.8
 
-var viewport_width  : int = get_viewport().size.x
-var viewport_height : int = get_viewport().size.y
+@onready var viewport_width  : int = get_viewport().size.x
+@onready var viewport_height : int = get_viewport().size.y
+
 var next_button
 
 func _ready() -> void:

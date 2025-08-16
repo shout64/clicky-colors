@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0rn06kv8oa6m"]
+
+[ext_resource type="Texture2D" uid="uid://ci3jxr2muy5f3" path="res://assets/100px-PMCS_Fuzzy.png" id="1_mt2j7"]
+[ext_resource type="Script" uid="uid://cypuxhj3t78jt" path="res://scripts/button.gd" id="2_vp6rg"]
+
+[node name="ButtonEnemy" type="Button"]
+offset_right = 40.0
+offset_bottom = 40.0
+icon = ExtResource("1_mt2j7")
+script = ExtResource("2_vp6rg")
+enemy = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
